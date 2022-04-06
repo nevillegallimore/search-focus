@@ -6,6 +6,7 @@
     "main": "webpack.config.js",
     "version": "1.0.0",
     "dependencies": {
+        "express": "^4.17.3",
         "react": "^18.0.0",
         "react-dom": "^18.0.0"
     },
@@ -25,6 +26,7 @@
         "build:source": "webpack --config ./webpack.config.js",
         "build:styles": "node-sass ./src/main.scss ./build/css/main.css --source-map true",
         "clean": "rm -rf ./build",
+        "start": "node ./server.js",
         "watch": "npm run build:markup && concurrently \"npm run watch:source\" \"npm run watch:styles\"",
         "watch:source": "npm run build:source -- --watch",
         "watch:styles": "npm run build:styles && npm run build:styles -- --watch"
